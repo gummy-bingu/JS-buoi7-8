@@ -23,8 +23,21 @@ for(let i = 0; i < numbers.length; ++i){
     document.getElementById("demSoDuong").innerHTML  = count;
 }
 
+function timSoDuongNhoNhat(){
+    let min = numbers[0];
+    if (min != 0  && min > 0 ){
+        for( let i = 0; i < numbers.length; ++i){
+            if (min > numbers[i]) { 
+                min = numbers[i];
+            }
+        }
+    }
+    else {
+        min = "<p> Không có số dương" + "</p>";
+    }
 
-
+document.getElementById("timSoDuongNhoNhat").innerHTML = min;
+}
 function timSoNhoNhat(){
         let min =  numbers[0];
         
@@ -37,13 +50,9 @@ function timSoNhoNhat(){
 }
 
 
-function timSoChanCuoiCung(){
-
-    
-    let arr = numbers;
-
+function timSoChanCuoiCung(){  
+let arr = numbers;
 let even = [];
-
 arr.forEach(number=> {
   if (number % 2 === 0) {
     even.push(number);
@@ -57,3 +66,4 @@ addNumber(tongSoDuong);
 addNumber(demSoDuong);
 addNumber(timSoNhoNhat);
 addNumber(timSoChanCuoiCung);
+addNumber(timSoDuongNhoNhat);
